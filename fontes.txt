@@ -1,0 +1,2 @@
+BCD-> Seven Segments 	:  	http://vhdlguru.blogspot.com.br/2010/03/vhdl-code-for-bcd-to-7-segment-display.html
+Binary->BCD		:	https://en.wikipedia.org/wiki/Double_dabble
