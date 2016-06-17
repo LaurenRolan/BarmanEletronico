@@ -19,6 +19,7 @@ begin
 	BEGIN
 		if (clk'event and clk='1') then
 			case  bcd is
+						       -- abcdefg
 				when "0000"=> segment7 <="0000001";  -- '0'
 				when "0001"=> segment7 <="1001111";  -- '1'
 				when "0010"=> segment7 <="0010010";  -- '2'
