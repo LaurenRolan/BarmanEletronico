@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
 
-entity bcd_4b is
+entity bin_bcd is
     Port
     (
     	--entrada
@@ -15,9 +15,9 @@ entity bcd_4b is
         hundreds : out  STD_LOGIC_VECTOR (6 downto 0);
         thousands : out  STD_LOGIC_VECTOR (6 downto 0)
     );
-end bcd_4b;
+end bin_bcd;
 
-architecture Behavioral of bcd_4b is
+architecture Behavioral of bin_bcd is
 
 begin
 
