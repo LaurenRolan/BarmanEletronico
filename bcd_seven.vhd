@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity bcd_seven is
 port
 	(
-			clk : in std_logic;
+			--clk : in std_logic;
 			bcd : in std_logic_vector(3 downto 0);
 			segment7 : out std_logic_vector(6 downto 0) 
     );
@@ -17,7 +17,7 @@ architecture Behavioral of bcd_seven is
 begin
 	process (clk,bcd)
 	BEGIN
-		if (clk'event and clk='1') then
+		--if (clk'event and clk='1') then
 			case  bcd is
 						       -- abcdefg
 				when "0000"=> segment7 <="0000001";  -- '0'
@@ -33,7 +33,7 @@ begin
 				
 				when others=> segment7 <="1111111";
 			end case;
-		end if;
+		--end if;
 
 	end process;
 
