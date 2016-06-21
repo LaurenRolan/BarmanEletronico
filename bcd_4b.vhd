@@ -4,12 +4,17 @@ use IEEE.numeric_std.all;
 
 
 entity bcd_4b is
-    Port ( binIN : in  STD_LOGIC_VECTOR (15 downto 0);
-           ones : out  STD_LOGIC_VECTOR (3 downto 0);
-           tens : out  STD_LOGIC_VECTOR (3 downto 0);
-           hundreds : out  STD_LOGIC_VECTOR (3 downto 0);
-           thousands : out  STD_LOGIC_VECTOR (3 downto 0)
-          );
+    Port
+    (
+    	--entrada
+    	binIN : in  STD_LOGIC_VECTOR (15 downto 0);
+    	
+    	--saída para o display de sete segmentos
+        ones : out  STD_LOGIC_VECTOR (6 downto 0);
+        tens : out  STD_LOGIC_VECTOR (6 downto 0);
+        hundreds : out  STD_LOGIC_VECTOR (6 downto 0);
+        thousands : out  STD_LOGIC_VECTOR (6 downto 0)
+    );
 end bcd_4b;
 
 architecture Behavioral of bcd_4b is
@@ -72,10 +77,10 @@ bcd1: process(binIN)
     end loop;
  
     -- set outputs
-    ones <= STD_LOGIC_VECTOR(bcd(3 downto 0));
-    tens <= STD_LOGIC_VECTOR(bcd(7 downto 4));
-    hundreds <= STD_LOGIC_VECTOR(bcd(11 downto 8));
-    thousands <= STD_LOGIC_VECTOR(bcd(15 downto 12));
+    S1: bcd_seven port map (bcd(3 downto 0), ones);
+    S2: bcd_seven port map (bcd(7 downto 4), tens);
+    S3: bcd_seven port map (bcd(11 downto 8), hundreds);
+    S4: bcd_seven port map (bcd(15 downto 12), thousands);
   
   end process bcd1;            
   
